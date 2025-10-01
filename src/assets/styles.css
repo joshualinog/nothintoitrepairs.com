@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom Rubik Black for h1 */
-.rubik-black {
-	font-family: 'Rubik', ui-sans-serif, system-ui, sans-serif;
-	font-weight: 900;
+.logo {
+	font-family: 'Lexend Tera', sans-serif;
+	line-height: 1;
+}
+.repairs{
+	font-size: .4em;
+	line-height: 2em;
+	letter-spacing: 1em;
+	text-align: center;
 }

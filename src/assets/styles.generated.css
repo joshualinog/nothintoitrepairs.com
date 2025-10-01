@@ -142,7 +142,7 @@ html,
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
      tab-size: 4; /* 3 */
-  font-family: Rubik, ui-sans-serif, system-ui, sans-serif; /* 4 */
+  font-family: ui-sans-serif, system-ui, sans-serif; /* 4 */
   font-feature-settings: normal; /* 5 */
   font-variation-settings: normal; /* 6 */
   -webkit-tap-highlight-color: transparent; /* 7 */
@@ -222,7 +222,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+  font-family: Roboto Mono, monospace; /* 1 */
   font-feature-settings: normal; /* 2 */
   font-variation-settings: normal; /* 3 */
   font-size: 1em; /* 4 */
@@ -548,6 +548,9 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -559,6 +562,12 @@ video {
 }
 .mt-12 {
   margin-top: 3rem;
+}
+.mb-12 {
+  margin-bottom: 3rem;
+}
+.mb-10 {
+  margin-bottom: 2.5rem;
 }
 .flex {
   display: flex;
@@ -617,9 +626,9 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(67 56 202 / var(--tw-border-opacity, 1));
 }
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+.border-taupe {
+  --tw-border-opacity: 1;
+  border-color: rgb(74 66 53 / var(--tw-border-opacity, 1));
 }
 .bg-gray-50 {
   --tw-bg-opacity: 1;
@@ -637,18 +646,23 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(67 56 202 / var(--tw-bg-opacity, 1));
 }
+.bg-khaki {
+  --tw-bg-opacity: 1;
+  background-color: rgb(179 172 156 / var(--tw-bg-opacity, 1));
+}
+.bg-taupe {
+  --tw-bg-opacity: 1;
+  background-color: rgb(74 66 53 / var(--tw-bg-opacity, 1));
+}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
-.bg-opacity-50 {
-  --tw-bg-opacity: 0.5;
+.bg-opacity-70 {
+  --tw-bg-opacity: 0.7;
 }
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75;
-}
-.bg-opacity-90 {
-  --tw-bg-opacity: 0.9;
 }
 .bg-cover {
   background-size: cover;
@@ -681,6 +695,12 @@ video {
 .text-center {
   text-align: center;
 }
+.font-lexendTera {
+  font-family: Lexend Tera, sans-serif;
+}
+.font-mono {
+  font-family: Roboto Mono, monospace;
+}
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -696,19 +716,34 @@ video {
 .font-bold {
   font-weight: 700;
 }
-.font-extrabold {
-  font-weight: 800;
+.font-thin {
+  font-weight: 100;
+}
+.uppercase {
+  text-transform: uppercase;
 }
 .leading-tight {
   line-height: 1.25;
 }
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+.tracking-widest {
+  letter-spacing: 0.1em;
+}
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(2 1 0 / var(--tw-text-opacity, 1));
+}
 .text-blue-600 {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity, 1));
-}
-.text-gray-700 {
-  --tw-text-opacity: 1;
-  color: rgb(55 65 81 / var(--tw-text-opacity, 1));
 }
 .text-gray-900 {
   --tw-text-opacity: 1;
@@ -721,6 +756,17 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+.text-reseda {
+  --tw-text-opacity: 1;
+  color: rgb(119 110 69 / var(--tw-text-opacity, 1));
+}
+.text-taupe {
+  --tw-text-opacity: 1;
+  color: rgb(74 66 53 / var(--tw-text-opacity, 1));
+}
+.text-opacity-60 {
+  --tw-text-opacity: 0.6;
 }
 .underline {
   text-decoration-line: underline;
@@ -736,14 +782,23 @@ video {
   transition-duration: 150ms;
 }
 
-/* Custom Rubik Black for h1 */
-.rubik-black {
-	font-family: 'Rubik', ui-sans-serif, system-ui, sans-serif;
-	font-weight: 900;
+.logo {
+	font-family: 'Lexend Tera', sans-serif;
+	line-height: 1;
+}
+.repairs{
+	font-size: .4em;
+	line-height: 2em;
+	letter-spacing: 1em;
+	text-align: center;
 }
 .hover\:bg-indigo-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(55 48 163 / var(--tw-bg-opacity, 1));
+}
+.hover\:bg-reseda:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(119 110 69 / var(--tw-bg-opacity, 1));
 }
 .hover\:bg-opacity-100:hover {
   --tw-bg-opacity: 1;

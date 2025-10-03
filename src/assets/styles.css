@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+p, li{
+	@apply font-mono;
+}
 .logo {
 	font-family: 'Lexend Tera', sans-serif;
 	line-height: 1;

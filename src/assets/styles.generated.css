@@ -775,9 +775,15 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(74 66 53 / var(--tw-bg-opacity, 1));
 }
+.bg-taupe\/60 {
+  background-color: rgb(74 66 53 / 0.6);
+}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+.bg-taupe\/70 {
+  background-color: rgb(74 66 53 / 0.7);
 }
 .bg-opacity-70 {
   --tw-bg-opacity: 0.7;
@@ -796,13 +802,24 @@ video {
   --tw-gradient-to: rgb(31 41 55 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
-.from-gray-900\/60 {
-  --tw-gradient-from: rgb(17 24 39 / 0.6) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(17 24 39 / 0) var(--tw-gradient-to-position);
+.from-taupe\/60 {
+  --tw-gradient-from: rgb(74 66 53 / 0.6) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(74 66 53 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
-.to-gray-900\/40 {
-  --tw-gradient-to: rgb(17 24 39 / 0.4) var(--tw-gradient-to-position);
+.from-taupe\/70 {
+  --tw-gradient-from: rgb(74 66 53 / 0.7) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(74 66 53 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.to-reseda\/40 {
+  --tw-gradient-to: rgb(119 110 69 / 0.4) var(--tw-gradient-to-position);
+}
+.to-reseda\/70 {
+  --tw-gradient-to: rgb(119 110 69 / 0.7) var(--tw-gradient-to-position);
+}
+.to-reseda\/60 {
+  --tw-gradient-to: rgb(119 110 69 / 0.6) var(--tw-gradient-to-position);
 }
 .bg-cover {
   background-size: cover;

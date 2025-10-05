@@ -1,0 +1,31 @@
+<!-- Masonry Gallery Include: gallery.njk -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+
+<div class="bg-[#2d1846] py-12 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="columns-1 sm:columns-2 md:columns-3 gap-4 [column-fill:_balance]"><!-- Masonry columns -->
+      {% set galleryImages = [
+        'https://placehold.co/600x400?text=Photo+1',
+        'https://placehold.co/400x600?text=Photo+2',
+        'https://placehold.co/600x600?text=Photo+3',
+        'https://placehold.co/800x400?text=Photo+4',
+        'https://placehold.co/400x800?text=Photo+5',
+        'https://placehold.co/700x500?text=Photo+6',
+        'https://placehold.co/500x700?text=Photo+7',
+        'https://placehold.co/600x300?text=Photo+8',
+        'https://placehold.co/300x600?text=Photo+9',
+        'https://placehold.co/800x600?text=Photo+10'
+      ] %}
+      {% for img in galleryImages %}
+        <a href="{{ img }}" data-fancybox="gallery" class="block mb-4 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-200">
+          <img src="{{ img }}" alt="Gallery Photo" class="w-full h-auto object-cover rounded-lg shadow-lg" />
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+<script>
+  // Fancybox will auto-initialize for [data-fancybox] links
+</script>

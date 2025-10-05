@@ -14,3 +14,12 @@ layout: layout.njk
 {% include "about.njk" %}
 
 {% include "testimonial-reviews.njk" %}
+
+{% set sortedLocations = locations | sort(attribute='order') %}
+{% for location in sortedLocations %}
+	{% include "location.njk" %}
+{% endfor %}
+
+{% include "gallery.njk" %}
+
+{% include "contact.njk" %}

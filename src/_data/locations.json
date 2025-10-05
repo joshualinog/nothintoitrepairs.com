@@ -1,0 +1,18 @@
+[
+  {
+    "order": 2,
+    "name": "Hickory, NC",
+    "city": "Hickory",
+    "state": "NC",
+    "description": "Serving the greater Hickory area with expert home repairs and renovations.",
+    "photo": "https://placehold.co/400x300?text=Hickory+NC"
+  },
+  {
+    "order": 1,
+    "name": "Johns Island, SC",
+    "city": "Johns Island",
+    "state": "SC",
+    "description": "Providing trusted repair and renovation services for Johns Island and surrounding communities.",
+    "photo": "https://placehold.co/400x300?text=Johns+Island+SC"
+  }
+]

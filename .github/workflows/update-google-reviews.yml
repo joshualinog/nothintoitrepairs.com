@@ -20,15 +20,4 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Fetch Google Reviews
-        env:
-          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
-        run: node fetch-google-reviews.js
 
-      - name: Commit and push updated reviews
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/_data/googleReviews.json
-          git commit -m "Update Google reviews [skip ci]" || echo "No changes to commit"
-          git push

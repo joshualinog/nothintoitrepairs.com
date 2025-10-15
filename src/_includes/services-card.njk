@@ -1,0 +1,25 @@
+<div class="order-first block w-full mt-12 aspect-square lg:mt-0">
+  <div>
+    <img src="https://cdn.pixabay.com/photo/2023/08/15/11/47/mushroom-8191823_1280.jpg" alt="Featured Image 1" class="rounded-t-xl" />
+    <div class="px-9 pt-10 pb-14 card-bg rounded-b-lg">
+      <div class="text-white space-y-4">
+        <h3 class="text-x text-aliceblue  lead-xl bold uppercase font-thin font-lexendTera">{{location.city}} services</h3>
+        <div class="text-lg font-thin font-mono">Here are the services we love helping {{location.city}} with:</div>
+      </div>
+      <div class="flex justify-between pt-8">
+        <ul class="flex flex-col gap-y-2.5">
+            {% for service in services %}
+            <li class="flex space-x-3 text-white">
+              <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6" />
+              <span class="paragraph-l font-bold">{{ service.name }} <br> <span class="font-thin text-xs">{{service.description}}</span></span>
+           
+            </li>
+            {% endfor %}
+        </ul>
+        <div class="flex flex-col justify-end">
+          <a href="#" class="py-3 px-6 bg-white text-primary-200 paragraph-m rounded-full">Book a Job!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

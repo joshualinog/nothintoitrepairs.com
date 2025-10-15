@@ -1,0 +1,22 @@
+<blockquote class="text-left">
+                  <div class="relative m-5 p-5">
+                    <svg class="absolute left-0 w-6 fill-reseda" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"/></svg>
+                    <p class="text-gray-100 text-xl px-5">
+                      {{ review.text | default('No review text provided.') }}
+                    </p>
+                    <svg class="absolute right-0 w-6 fill-reseda" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M464 32H336c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h80v64c0 35.3 28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48zm-288 0H48C21.5 32 0 53.5 0 80v128c0 26.5 21.5 48 48 48h80v64c0 35.3 28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48z"/></svg>
+                    <div class="text-sm mt-5 mx-5">
+                     
+                      <div class="text-white text-6xl">
+                        <small class="uppercase text-xl">Rating:</small> {{ review.rating }} ⭐
+                      </div>
+                       <p class="font-medium text-white">
+                        <a href="https://www.google.com/search?q=Nothin%27+To+It+Repairs&oq=Nothin%27+To+It+Repairs&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBBzMxMmowajeoAgCwAgA&sourceid=chrome&ie=UTF-8#" target="_blank" rel="noopener noreferrer" class="underline hover:text-indigo-300 text-3xl">{{ review.author }}</a>
+                      </p>
+                      <p class="mt-1 text-gray-300">{{ review.date }} </p>
+                      {% if review.owner_reply %}
+                        <p class="mt-2 text-indigo-200 italic">NTIR: {{ review.owner_reply }}</p>
+                      {% endif %}
+                    </div>
+                  </div>
+                </blockquote>

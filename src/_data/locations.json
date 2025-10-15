@@ -5,7 +5,9 @@
     "city": "Hickory",
     "state": "NC",
     "description": "Serving the greater Hickory area with expert home repairs and renovations.",
-    "photo": "https://placehold.co/400x300?text=Hickory+NC"
+    "photo": "https://placehold.co/400x300?text=Hickory+NC",
+    "color": "reseda",
+    "colorClass": "bg-reseda-500"
   },
   {
     "order": 1,
@@ -13,6 +15,8 @@
     "city": "Johns Island",
     "state": "SC",
     "description": "Providing trusted repair and renovation services for Johns Island and surrounding communities.",
-    "photo": "https://placehold.co/400x300?text=Johns+Island+SC"
+    "photo": "https://placehold.co/400x300?text=Johns+Island+SC",
+    "color": "khaki",
+    "colorClass": "bg-khaki-500"
   }
 ]

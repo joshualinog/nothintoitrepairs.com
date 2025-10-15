@@ -2,16 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-p, li{
+:root {
+	--taupe: #4a4235;
+	--reseda: #776e45;
+	--black: #020100;
+	--khaki: #b3ac9c;
+	--coyote: #776654;
+	--aliceblue: #f2f8fc;
+}
+
+p,
+li {
 	@apply font-mono;
 }
+
 .logo {
 	font-family: 'Lexend Tera', sans-serif;
 	line-height: 1;
 }
-.repairs{
+
+.repairs {
 	font-size: .4em;
 	line-height: 2em;
 	letter-spacing: 1em;
 	text-align: center;
+}
+
+/* Location section even/odd styling scaffold */
+.location-section{
+	background-color:var(--aliceblue)
+}
+	/* ji */
+.location-section:nth-of-type(odd) {
+
+}
+.location-section:nth-of-type(odd) .card-bg {
+	background-color:var(--reseda)
+}
+.location-section:nth-of-type(odd) .cta-now-button {
+	background-color: var(--reseda);
+	color: var(--aliceblue);
+	@apply font-lexend;
+	text-transform: uppercase;
+}
+.location-section:nth-of-type(odd) .more-info-button {
+	background-color: var(--aliceblue	);
+	color: var(--taupe);
+	@apply font-lexend;
+	text-transform: uppercase;
+	border-color: var(--taupe);
+}
+
+
+	/* hi */
+.location-section:nth-of-type(even) {
+
+}
+.location-section:nth-of-type(even) .card-bg {
+	background-color:var(--khaki)
+}
+.location-section:nth-of-type(even) .cta-now-button {
+	background-color: var(--khaki);
+	color: var(--taupe);
+	@apply font-lexend;
+	text-transform: uppercase;
+}
+.location-section:nth-of-type(even) .more-info-button {
+	background-color: var(--aliceblue	);
+	color: var(--taupe);
+	@apply font-lexend;
+	text-transform: uppercase;
+	border-color: var(--taupe);
+}
+
+/* Example: alternate border or accent color */
+.location-section:nth-of-type(odd) .services-card {
+	border-left: 8px solid #bada55;
+}
+
+.location-section:nth-of-type(even) .services-card {
+	border-left: 8px solid #55bada;
 }

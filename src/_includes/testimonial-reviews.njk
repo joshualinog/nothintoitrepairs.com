@@ -16,47 +16,33 @@
 <div class="bg-no-repeat bg-cover bg-center bg-taupe/70 relative" style="background-image: url('/assets/images/sittingworker.webp');">
   <div class="absolute bg-gradient-to-r from-taupe/70 to-reseda/60 inset-0 z-0"></div>
   <div>
-    <div class="min-h-screen flex justify-center">
-      <div class="grid grid-cols-2 gap-4 items-center z-10">
-        <div class="max-w-lg text-center sm:text-left">
-          <div class="text-xl font-lexendTera text-white tracking-tighter mb-2">
+    <div class="min-h-screen flex justify-center px-3 py-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center z-10">
+        <div class="max-w-lg text-center md:text-left mb-2 md:mb-0">
+          <div class="text-lg sm:text-xl  font-lexendTera text-white tracking-tighter mb-2">
             WHAT PEOPLE ARE SAYING
           </div>
           <h2 class="text-4xl font-thin font-lexend text-gray-100 tracking-tight">
-            A smile <br class="hidden sm:block lg:hidden"> is an inexpensive way to change your looks
+            A smile <br class="hidden md:block lg:hidden"> is an inexpensive way to change your looks
           </h2>
           <p class="mt-4 text-gray-300">
             Goals are just dreams with deadline
           </p>
-          <div class="flex flex-row items-center space-x-3 mt-5">
-            <!-- Social links omitted for brevity, add as needed -->
-          </div>
+          
         </div>
   <div class="mx-0 max-w-xl flex rounded-2xl bg-khaki/90 backdrop-blur-md">
           <div class="swiper-container flex-col flex self-center">
             <div class="swiper-wrapper">
               {% for review in googleReviews %}
               <div class="swiper-slide">
-                <blockquote class="text-left">
-                  <div class="relative m-5 p-5">
-                    <svg class="absolute left-0 w-6 fill-reseda" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"/></svg>
-                    <p class="text-gray-100 text-xl px-5">
-                      {{ review.text | default('No review text provided.') }}
-                    </p>
-                    <svg class="absolute right-0 w-6 fill-reseda" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M464 32H336c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h80v64c0 35.3 28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48zm-288 0H48C21.5 32 0 53.5 0 80v128c0 26.5 21.5 48 48 48h80v64c0 35.3 28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48z"/></svg>
-                    <div class="text-sm mt-5 mx-5">
-                      <p class="font-medium text-white">
-                        <a href="https://www.google.com/search?q=Nothin%27+To+It+Repairs&oq=Nothin%27+To+It+Repairs&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBBzMxMmowajeoAgCwAgA&sourceid=chrome&ie=UTF-8#" target="_blank" rel="noopener noreferrer" class="underline hover:text-indigo-300">{{ review.author }}</a>
-                      </p>
-                      <p class="mt-1 text-gray-300">{{ review.date }} | Rating: {{ review.rating }} ⭐</p>
-                      {% if review.owner_reply %}
-                        <p class="mt-2 text-indigo-200 italic">NTIR: {{ review.owner_reply }}</p>
-                      {% endif %}
-                    </div>
-                  </div>
-                </blockquote>
+                {% if review.text %}
+                      {% include "review-with-text.njk" %}
+                    {% else %}
+                      {% include "review-empty-text.njk" %}
+                    {% endif %}
               </div>
               {% endfor %}
+                
             </div>
             <div class="mt-12 swiper-pagination hidden"></div>
           </div>
@@ -81,7 +67,7 @@
       },
       breakpoints: {
         640: {
-          slidesPerView: 1.5,
+          slidesPerView: 1,
         },
         1024: {
           slidesPerView: 1,

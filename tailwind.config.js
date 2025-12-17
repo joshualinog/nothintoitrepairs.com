@@ -2,6 +2,9 @@ module.exports = {
   content: ["./src/**/*.{html,njk,js}"],
   theme: {
     extend: {
+      screens: {
+        xs: '300px',
+      },
       fontFamily: {
         sans: ["ui-sans-serif", "system-ui", "sans-serif"],
         lexend: ["Lexend", "sans-serif"],

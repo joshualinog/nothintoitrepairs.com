@@ -1,13 +1,13 @@
 <nav class="bg-reseda shadow p-4 ">
   <div class="container mx-auto flex justify-between items-center">
-    <a href="#" class="font-bold text-lg text-gray-900">Nothin To it Repairs</a>
+    <a href="#" class="text-2xl font-thin font-lexendTera uppercase tracking-tight text-aliceblue">NOTHIN' TO IT <br><div class="repairs">REPAIRS</div></a>
     <ul class="hidden md:flex items-center gap-8">
       <li><a href="#home" class="text-khaki font-mono hover:text-blue-600 transition">Home</a></li>
       <li><a href="#about" class="text-khaki font-mono hover:text-blue-600 transition">About</a></li>
       <li><a href="#johns-island-sc" class="text-khaki font-mono hover:text-blue-600 transition">Locations</a></li>
       <li><a href="#contact" class="text-khaki font-mono hover:text-blue-600 transition">Contact</a></li>
     </ul>
-    <button id="mobile-menu-toggle" class="md:hidden text-gray-900 focus:outline-none">
+    <button id="mobile-menu-toggle" class="md:hidden text-aliceblue focus:outline-none">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
@@ -15,27 +15,50 @@
 </nav>
 
 <!-- Mobile menu -->
-<div id="mobile-menu" class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 shadow-lg py-6 px-4 flex flex-col items-center gap-4 md:hidden transition-all duration-300 translate-y-full invisible opacity-0 z-50">
-  <a href="#about" class="w-full text-center text-gray-700 hover:text-blue-600 transition py-2">About</a>
-  <a href="#reviews" class="w-full text-center text-gray-700 hover:text-blue-600 transition py-2">Reviews & Testimonials</a>
-  <a href="#hickory-nc" class="w-full text-center text-gray-700 hover:text-blue-600 transition py-2">Hickory, NC</a>
-  <a href="#johns-island-sc" class="w-full text-center text-gray-700 hover:text-blue-600 transition py-2">Johns Island, SC</a>
-  <a href="#gallery" class="w-full text-center text-gray-700 hover:text-blue-600 transition py-2">Gallery</a>
-  <a href="#contact" class="w-full text-center text-gray-700 hover:text-blue-600 transition py-2">Contact</a>
+<div id="mobile-menu" class="fixed bottom-0 left-0 w-full bg-taupe text-aliceblue border-t border-gray-200 shadow-lg py-6 px-4 flex flex-col items-center gap-4 md:hidden transition-all duration-300 translate-y-full invisible opacity-0 z-50">
+  <button id="mobile-menu-close" class="self-end text-aliceblue focus:outline-none mb-4">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+  <a href="#about" class="w-full text-center text-aliceblue font-mono text-lg hover:text-blue-600 transition py-2">About</a>
+  <a href="#reviews" class="w-full text-center text-aliceblue font-mono text-lg hover:text-blue-600 transition py-2">Reviews & Testimonials</a>
+  <a href="#johns-island-sc" class="w-full text-center text-aliceblue font-mono text-lg hover:text-blue-600 transition py-2">Johns Island, SC</a>
+  <a href="#hickory-nc" class="w-full text-center text-aliceblue font-mono text-lg hover:text-blue-600 transition py-2">Hickory, NC</a>
+  <a href="#contact" class="w-full text-center text-aliceblue font-mono text-lg hover:text-blue-600 transition py-2">Contact</a>
 </div>
 
 <script>
   const toggle = document.getElementById('mobile-menu-toggle');
   const menu = document.getElementById('mobile-menu');
+  const closeBtn = document.getElementById('mobile-menu-close');
   let open = false;
+
+  function closeMenu() {
+    open = false;
+    menu.classList.add('translate-y-full', 'invisible', 'opacity-0');
+    menu.classList.remove('translate-y-0', 'visible', 'opacity-100');
+  }
+
+  function openMenu() {
+    open = true;
+    menu.classList.remove('translate-y-full', 'invisible', 'opacity-0');
+    menu.classList.add('translate-y-0', 'visible', 'opacity-100');
+  }
+
   toggle.addEventListener('click', () => {
-    open = !open;
     if (open) {
-      menu.classList.remove('translate-y-full', 'invisible', 'opacity-0');
-      menu.classList.add('translate-y-0', 'visible', 'opacity-100');
+      closeMenu();
     } else {
-      menu.classList.add('translate-y-full', 'invisible', 'opacity-0');
-      menu.classList.remove('translate-y-0', 'visible', 'opacity-100');
+      openMenu();
+    }
+  });
+
+  closeBtn.addEventListener('click', closeMenu);
+
+  document.addEventListener('click', (e) => {
+    if (open && !menu.contains(e.target) && !toggle.contains(e.target)) {
+      closeMenu();
     }
   });
 </script>

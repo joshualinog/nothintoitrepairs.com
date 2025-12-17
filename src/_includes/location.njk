@@ -1,6 +1,6 @@
 
 <!-- component -->
-<div class="location-section">
+<div class="location-section" id="{{ location.city | lower | replace(' ', '-') }}-{{ location.state | lower }}">
   <section>
     <section class="sticky">
       <div class="max-w-lg px-4 sm:pt-24 pt-12 sm:pb-8 mx-auto text-left md:max-w-none md:text-center">

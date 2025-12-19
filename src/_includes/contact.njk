@@ -21,6 +21,8 @@
 
   <!-- bottom relative container -->
   <div class="w-full h-[1200px] md:h-[60vh] lg:h-[130vh] bg-aliceblue relative">
+    <!-- form container -->
+    <div id="form-container">
     <!-- division with floating form -->
     <div class="absolute -top-[3%] md:-top-[10%] left-1/2 -translate-x-1/2 grid grid-cols-1 md:grid-cols-3 h-fit w-4/5 md:w-[90%] lg:w-4/5 rounded shadow overflow-hidden text-khaki">
       <!-- form / left div -->
@@ -173,9 +175,38 @@
         <h1 class="text-center text-khaki">Follow me on github <a href="https://github.com/Darkstar69">Darkstar69</a></h1>
       </div>
     </div>
+    </div>
+    {% include "thank-you.njk" %}
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('form');
+      const formSection = document.getElementById('form-container');
+      const thankYouDiv = document.getElementById('thank-you');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const formData = new FormData(form);
+          fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              // Hide the form section and show thank you
+              formSection.style.display = 'none';
+              thankYouDiv.classList.remove('hidden');
+            } else {
+              alert('There was an error submitting the form. Please try again.');
+            }
+          }).catch(error => {
+            alert('There was an error submitting the form. Please try again.');
+          });
+        });
+      }
+      // Existing script for select
       const select = document.querySelector('select[name="budget"]');
       if (select) {
         select.style.color = select.value === '' ? '#776e45' : '#020100';

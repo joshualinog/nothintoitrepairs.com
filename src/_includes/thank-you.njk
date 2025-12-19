@@ -1,5 +1,30 @@
 <!-- thank you message -->
-<div id="thank-you" class="hidden mt-20 text-center">
-  <h2 class="text-2xl md:text-3xl font-lexend font-bold text-khaki tracking-tight mb-4">Thank You!</h2>
-  <p class="text-lg font-lexend text-khaki">We have received your message and will get back to you soon.</p>
-</div>
+<section id="thank-you" class="hidden">
+  <div class="bg-no-repeat bg-cover bg-center relative min-h-screen flex justify-center items-center px-3 py-6">
+    <div class="absolute inset-0 bg-no-repeat bg-cover bg-center opacity-30" style="background-image: url('/assets/images/NTIRLOGO.png');"></div>
+    <div class="absolute bg-gradient-to-r from-reseda/90 to-reseda/80 inset-0 z-0"></div>
+    <div class="grid grid-cols-1 gap-4 items-center z-10 text-center">
+      <div class="max-w-lg">
+        <figure class="mb-4">
+          <img src="/assets/images/NTIRLOGO.png" alt="NOTHIN' TO IT REPAIRS Logo" class="w-24 h-auto mx-auto">
+        </figure>
+        <h1 class="text-2xl font-thin font-lexendTera uppercase tracking-tight text-black mb-4">
+          NOTHIN' TO IT <br><div class="repairs text-black">REPAIRS</div>
+        </h1>
+        <br/>
+        <h2 class="text-4xl font-thin font-lexendTera text-black tracking-tight mb-4">
+          GREAT CHOICE!
+        </h2>
+        <p class="text-lg font-thin font-lexend uppercase text-black">
+          We have received your message and will get back to you soon.
+        </p>
+        <h4  class="mt-4 text-md font-mono text-black">
+          Can't stop at one?
+        </h4>
+        <button id="submit-another" class="mt-6 px-6 py-2 bg-taupe text-khaki font-bold text-2xl font-mono rounded hover:bg-reseda transition">
+          Book Another Job!
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

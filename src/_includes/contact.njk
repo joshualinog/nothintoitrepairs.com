@@ -188,6 +188,13 @@
           e.preventDefault();
           console.log('Submit handler called');
           console.log('Form submitted');
+          // Temporary: Skip submission for testing (remove this block in production)
+          if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.includes('.app.github.dev')) {
+            console.log('Test mode: Skipping submission');
+            formSection.style.display = 'none';
+            thankYouDiv.classList.remove('hidden');
+            return;
+          }
           const formData = new FormData(form);
           fetch(form.action, {
             method: 'POST',
@@ -216,6 +223,15 @@
         select.style.color = select.value === '' ? '#776e45' : '#020100';
         select.addEventListener('change', function() {
           select.style.color = this.value === '' ? '#776e45' : '#020100';
+        });
+      }
+      // Button to submit another
+      const submitAnotherBtn = document.getElementById('submit-another');
+      if (submitAnotherBtn) {
+        submitAnotherBtn.addEventListener('click', function() {
+          thankYouDiv.classList.add('hidden');
+          formSection.style.display = 'block';
+          form.reset();
         });
       }
     });

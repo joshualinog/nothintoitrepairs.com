@@ -27,7 +27,7 @@
     <div class="absolute -top-[3%] md:-top-[10%] left-1/2 -translate-x-1/2 grid grid-cols-1 md:grid-cols-3 h-fit w-4/5 md:w-[90%] lg:w-4/5 rounded shadow overflow-hidden text-khaki">
       <!-- form / left div -->
       <div class="p-2 md:p-4 h-full bg-taupe col-span-2">
-        <form action="https://formspree.io/f/meejjqkq" method="POST">
+        <form id="contact-form" action="https://formspree.io/f/meejjqkq" method="POST">
           <!-- form top part containing mail icon and heading -->
           <div class="flex flex-col md:flex-row justify-around items-start md:items-center pt-8 p-4">
             <!-- heading -->
@@ -125,7 +125,7 @@
         <!-- submit button div -->
         <div class="flex items-center justify-center md:justify-end py-4 px-8">
           <!-- submit button -->
-          <button class="py-2 px-4 md:py-4 md:px-6 bg-black rounded-md border-2 border-black flex items-center gap-2 hover:scale-95 transition-all text-khaki">
+          <button type="submit" form="contact-form" class="py-2 px-4 md:py-4 md:px-6 bg-black rounded-md border-2 border-black flex items-center gap-2 hover:scale-95 transition-all text-khaki">
             <span class="text-xl">Submit</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -180,12 +180,14 @@
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const form = document.querySelector('form');
+      const form = document.getElementById('contact-form');
       const formSection = document.getElementById('form-container');
       const thankYouDiv = document.getElementById('thank-you');
       if (form) {
         form.addEventListener('submit', function(e) {
           e.preventDefault();
+          console.log('Submit handler called');
+          console.log('Form submitted');
           const formData = new FormData(form);
           fetch(form.action, {
             method: 'POST',
@@ -194,6 +196,7 @@
               'Accept': 'application/json'
             }
           }).then(response => {
+            console.log('Response status:', response.status);
             if (response.ok) {
               // Hide the form section and show thank you
               formSection.style.display = 'none';
@@ -202,6 +205,7 @@
               alert('There was an error submitting the form. Please try again.');
             }
           }).catch(error => {
+            console.error('Fetch error:', error);
             alert('There was an error submitting the form. Please try again.');
           });
         });

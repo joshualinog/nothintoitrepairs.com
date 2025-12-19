@@ -1,5 +1,15 @@
 [
   {
+    "name": "Fencing",
+    "description": "Professional fencing installation and repair for enhanced security and curb appeal.",
+    "photo": "https://placehold.co/400x300?text=Fencing"
+  },
+  {
+    "name": "Decks & Patios",
+    "description": "Custom deck and patio construction for outdoor living.",
+    "photo": "https://placehold.co/400x300?text=Decks+%26+Patios"
+  },
+  {
     "name": "General Repairs",
     "description": "Comprehensive home repair services for all your needs.",
     "photo": "https://placehold.co/400x300?text=General+Repairs"
@@ -28,21 +38,6 @@
     "name": "Flooring",
     "description": "Installation and repair of hardwood, tile, and laminate floors.",
     "photo": "https://placehold.co/400x300?text=Flooring"
-  },
-  {
-    "name": "Plumbing",
-    "description": "Reliable plumbing services for repairs, installations, and emergencies.",
-    "photo": "https://placehold.co/400x300?text=Plumbing"
-  },
-  {
-    "name": "Electrical",
-    "description": "Licensed electrical work for safety and efficiency.",
-    "photo": "https://placehold.co/400x300?text=Electrical"
-  },
-  {
-    "name": "Decks & Patios",
-    "description": "Custom deck and patio construction for outdoor living.",
-    "photo": "https://placehold.co/400x300?text=Decks+%26+Patios"
   },
   {
     "name": "Windows & Doors",

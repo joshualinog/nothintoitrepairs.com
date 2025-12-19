@@ -29,7 +29,7 @@
           <!-- form top part containing mail icon and heading -->
           <div class="flex flex-col md:flex-row justify-around items-start md:items-center pt-8 p-4">
             <!-- heading -->
-            <h2 class="text-2xl md:text-3xl font-lexend font-bold text-khaki tracking-tight">Send Us A Message</h2>
+            <h2 class="text-2xl md:text-3xl font-lexend font-bold text-khaki tracking-tight">Book a Job & Questions</h2>
 
             <!-- mail svg icon -->
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-forward" width="33" height="33" viewBox="0 0 24 24" stroke-width="1.5" stroke="#020100" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -48,7 +48,7 @@
               <label class="font-lexendTera font-semibold uppercase">
                 Name <span class="text-red-500">&#42;</span>
               </label>
-              <input class="border-[1px] border-black bg-khaki p-2 rounded-md placeholder:text-[#020100] placeholder:font-mono placeholder:text-lg" placeholder="Enter Your Name" required name="name" type="text" />
+              <input class="border-[1px] border-black bg-khaki p-2 rounded-md text-black text-lg font-mono placeholder:text-reseda placeholder:font-mono placeholder:text-lg" placeholder="Enter Your Name" required name="name" type="text" />
             </div>
 
             <!-- email input -->
@@ -56,7 +56,7 @@
               <label class="font-lexendTera font-semibold uppercase">
                 Email <span class="text-red-500">&#42;</span>
               </label>
-              <input class="border-[1px] border-black bg-khaki p-2 rounded-md placeholder:text-[#020100] placeholder:font-mono placeholder:text-lg" placeholder="Enter Your Email" required name="email" type="email" />
+              <input class="border-[1px] border-black bg-khaki p-2 rounded-md text-black text-lg font-mono placeholder:text-reseda placeholder:font-mono placeholder:text-lg" placeholder="Enter Your Email" required name="email" type="email" />
             </div>
 
             <!-- phone number input -->
@@ -64,15 +64,36 @@
               <label class="font-lexendTera font-semibold uppercase">
                 Phone <span class="text-red-500">&#42;</span>
               </label>
-              <input class="border-[1px] border-black bg-khaki p-2 rounded-md placeholder:text-[#020100] placeholder:font-mono placeholder:text-lg" placeholder="Enter Your Phone Number" required name="phone" type="tel" />
+              <input class="border-[1px] border-black bg-khaki p-2 rounded-md text-black text-lg font-mono placeholder:text-reseda placeholder:font-mono placeholder:text-lg" placeholder="Enter Your Phone Number" required name="phone" type="tel" />
             </div>
 
-            <!-- subject input -->
+            <!-- services checkboxes -->
             <div class="flex flex-col gap-1">
               <label class="font-lexendTera font-semibold uppercase">
-                Subject <span class="text-red-500">&#42;</span>
+                Services <span class="text-red-500">&#42;</span>
               </label>
-              <input class="border-[1px] border-black bg-khaki p-2 rounded-md placeholder:text-[#020100] placeholder:font-mono placeholder:text-lg" placeholder="Enter Your Subject" required name="subject" type="text" />
+              <div class="flex flex-col gap-2">
+                <label class="flex items-center gap-2">
+                  <input type="checkbox" name="services[]" value="fencing" class="accent-khaki">
+                  <span class="text-khaki font-mono text-lg">FENCING</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="checkbox" name="services[]" value="decking" class="accent-khaki">
+                  <span class="text-khaki font-mono text-lg">DECKING</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="checkbox" name="services[]" value="porch remodel" class="accent-khaki">
+                  <span class="text-khaki font-mono text-lg">PORCH REMODEL</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="checkbox" name="services[]" value="bathroom repair and remodel" class="accent-khaki">
+                  <span class="text-khaki font-mono text-lg">BATHROOM REPAIR AND REMODEL</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="checkbox" name="services[]" value="custom home remodel" class="accent-khaki">
+                  <span class="text-khaki font-mono text-lg">CUSTOM HOME REMODEL</span>
+                </label>
+              </div>
             </div>
 
             <!-- message input -->
@@ -80,7 +101,7 @@
               <label class="font-lexendTera font-semibold uppercase">
                 Message <span class="text-red-500">&#42;</span>
               </label>
-              <input class="border-[1px] border-black bg-khaki p-2 rounded-md placeholder:text-[#020100] placeholder:font-mono placeholder:text-lg" placeholder="Enter Your Message" required name="message" type="text" />
+              <textarea class="border-[1px] border-black bg-khaki p-2 rounded-md text-black text-lg font-mono placeholder:text-reseda placeholder:font-mono placeholder:text-lg" placeholder="Enter Your Message" required name="message"></textarea>
             </div>
           </div>
         </form>

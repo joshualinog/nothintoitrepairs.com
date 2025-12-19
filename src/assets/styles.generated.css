@@ -1243,6 +1243,9 @@ video {
 .underline {
   text-decoration-line: underline;
 }
+.accent-khaki {
+  accent-color: #b3ac9c;
+}
 .opacity-0 {
   opacity: 0;
 }
@@ -1418,6 +1421,16 @@ li {
 .placeholder\:text-\[\#020100\]::placeholder {
   --tw-text-opacity: 1;
   color: rgb(2 1 0 / var(--tw-text-opacity, 1));
+}
+
+.placeholder\:text-reseda::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(119 110 69 / var(--tw-text-opacity, 1));
+}
+
+.placeholder\:text-reseda::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(119 110 69 / var(--tw-text-opacity, 1));
 }
 
 .before\:absolute::before {

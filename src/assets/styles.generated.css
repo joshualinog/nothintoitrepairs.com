@@ -619,9 +619,6 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
-.mb-0 {
-  margin-bottom: 0px;
-}
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -716,6 +713,9 @@ video {
 .w-12 {
   width: 3rem;
 }
+.w-20 {
+  width: 5rem;
+}
 .w-32 {
   width: 8rem;
 }
@@ -733,12 +733,6 @@ video {
 }
 .w-full {
   width: 100%;
-}
-.w-24 {
-  width: 6rem;
-}
-.w-20 {
-  width: 5rem;
 }
 .max-w-7xl {
   max-width: 80rem;
@@ -1398,6 +1392,34 @@ li {
   color: rgb(56 189 248 );
 }
 
+.placeholder\:font-mono::-moz-placeholder {
+  font-family: Roboto Mono, monospace;
+}
+
+.placeholder\:font-mono::placeholder {
+  font-family: Roboto Mono, monospace;
+}
+
+.placeholder\:text-lg::-moz-placeholder {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.placeholder\:text-lg::placeholder {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.placeholder\:text-\[\#020100\]::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(2 1 0 / var(--tw-text-opacity, 1));
+}
+
+.placeholder\:text-\[\#020100\]::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(2 1 0 / var(--tw-text-opacity, 1));
+}
+
 .before\:absolute::before {
   content: var(--tw-content);
   position: absolute;
@@ -1558,6 +1580,11 @@ li {
     line-height: 2.25rem;
   }
 
+  .sm\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
   .sm\:text-5xl {
     font-size: 3rem;
     line-height: 1;
@@ -1571,11 +1598,6 @@ li {
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .sm\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 }
 

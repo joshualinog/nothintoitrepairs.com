@@ -67,8 +67,22 @@
               <input class="border-[1px] border-black bg-khaki p-2 rounded-md text-black text-lg font-mono placeholder:text-reseda placeholder:font-mono placeholder:text-lg" placeholder="Enter Your Phone Number" required name="phone" type="tel" />
             </div>
 
-            <!-- services checkboxes -->
+            <!-- budget select -->
             <div class="flex flex-col gap-1">
+              <label class="font-lexendTera font-semibold uppercase">
+                Budget <span class="text-red-500">&#42;</span>
+              </label>
+              <select class="border-[1px] border-black bg-khaki p-2 rounded-md text-black text-lg font-mono" name="budget" required>
+                <option value="">Select Budget Range</option>
+                <option value="500-1500">$500 to $1,500</option>
+                <option value="1500-5000">$1,500 to $5,000</option>
+                <option value="5000-10000">$5,000 to $10,000</option>
+                <option value="10000+">$10,000+</option>
+              </select>
+            </div>
+
+            <!-- services checkboxes -->
+            <div class="flex flex-col gap-1 md:col-span-2">
               <label class="font-lexendTera font-semibold uppercase">
                 Services <span class="text-red-500">&#42;</span>
               </label>
@@ -160,4 +174,15 @@
       </div>
     </div>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const select = document.querySelector('select[name="budget"]');
+      if (select) {
+        select.style.color = select.value === '' ? '#776e45' : '#020100';
+        select.addEventListener('change', function() {
+          select.style.color = this.value === '' ? '#776e45' : '#020100';
+        });
+      }
+    });
+  </script>
 </div>

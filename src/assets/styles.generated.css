@@ -1413,16 +1413,6 @@ li {
   line-height: 1.75rem;
 }
 
-.placeholder\:text-\[\#020100\]::-moz-placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(2 1 0 / var(--tw-text-opacity, 1));
-}
-
-.placeholder\:text-\[\#020100\]::placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(2 1 0 / var(--tw-text-opacity, 1));
-}
-
 .placeholder\:text-reseda::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(119 110 69 / var(--tw-text-opacity, 1));
@@ -1747,11 +1737,6 @@ li {
   .md\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
-  }
-
-  .md\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
   }
 }
 

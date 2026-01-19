@@ -1,19 +1,21 @@
 <nav class="bg-reseda shadow p-4 ">
+  {% set onHome = (page.url == '/' or page.url == '/index.html' or page.url == '') %}
   <div class="container mx-auto flex justify-between items-center">
-    <a href="#" class="text-2xl font-thin font-lexendTera uppercase tracking-tight text-aliceblue">NOTHIN' TO IT <br><div class="repairs">REPAIRS</div></a>
+    <a href="/" class="text-2xl font-thin font-lexendTera uppercase tracking-tight text-aliceblue">NOTHIN' TO IT <br><div class="repairs">REPAIRS</div></a>
     <ul class="hidden md:flex items-center gap-8">
-      <li><a href="#home" class="text-khaki font-mono hover:text-blue-600 transition">Home</a></li>
-      <li><a href="#about" class="text-khaki font-mono hover:text-blue-600 transition">About</a></li>
-      <li><a href="#johns-island-sc" class="text-khaki font-mono hover:text-blue-600 transition">Locations</a></li>
+      <li><a href="{% if onHome %}#home{% else %}{{ '/#home' | url }}{% endif %}" class="text-khaki font-mono hover:text-blue-600 transition">Home</a></li>
+      <li><a href="{% if onHome %}#about{% else %}{{ '/#about' | url }}{% endif %}" class="text-khaki font-mono hover:text-blue-600 transition">About</a></li>
+      <li><a href="{% if onHome %}#johns-island-sc{% else %}{{ '/#johns-island-sc' | url }}{% endif %}" class="text-khaki font-mono hover:text-blue-600 transition">Locations</a></li>
       <li><a href="/fencing-and-decking-specialists/" class="text-khaki font-mono hover:text-blue-600 transition">Fencing &amp; Decking</a></li>
-      <li><a href="#contact" class="text-khaki font-mono hover:text-blue-600 transition">Book a Job!</a></li>
+      <li><a href="{% if onHome %}#contact{% else %}{{ '/#contact' | url }}{% endif %}" class="text-khaki font-mono hover:text-blue-600 transition">Book a Job!</a></li>
     </ul>
     <button id="mobile-menu-toggle" class="md:hidden text-aliceblue focus:outline-none">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
-</nav>
+    </div>
+  </nav>
 
 <!-- Mobile menu -->
 <div id="mobile-menu" class="fixed bottom-0 left-0 w-full bg-taupe text-aliceblue border-t border-gray-200 shadow-lg py-6 px-4 flex flex-col items-center gap-4 md:hidden transition-all duration-300 translate-y-full invisible opacity-0 z-50">
@@ -22,12 +24,12 @@
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
     </svg>
   </button>
-  <a href="#about" class="w-full text-center text-aliceblue font-mono text-lg hover:text-blue-600 transition py-2">About</a>
-  <a href="#reviews" class="w-full text-center text-aliceblue font-mono text-lg hover:text-blue-600 transition py-2">Reviews & Testimonials</a>
-  <a href="#johns-island-sc" class="w-full text-center text-aliceblue font-mono text-lg hover:text-blue-600 transition py-2">Johns Island, SC</a>
-  <a href="#hickory-nc" class="w-full text-center text-aliceblue font-mono text-lg hover:text-blue-600 transition py-2">Hickory, NC</a>
+  <a href="{% if onHome %}#about{% else %}{{ '/#about' | url }}{% endif %}" class="w-full text-center text-aliceblue font-mono text-lg hover:text-blue-600 transition py-2">About</a>
+  <a href="{% if onHome %}#reviews{% else %}{{ '/#reviews' | url }}{% endif %}" class="w-full text-center text-aliceblue font-mono text-lg hover:text-blue-600 transition py-2">Reviews & Testimonials</a>
+  <a href="{% if onHome %}#johns-island-sc{% else %}{{ '/#johns-island-sc' | url }}{% endif %}" class="w-full text-center text-aliceblue font-mono text-lg hover:text-blue-600 transition py-2">Johns Island, SC</a>
+  <a href="{% if onHome %}#hickory-nc{% else %}{{ '/#hickory-nc' | url }}{% endif %}" class="w-full text-center text-aliceblue font-mono text-lg hover:text-blue-600 transition py-2">Hickory, NC</a>
   <a href="/fencing-and-decking-specialists/" class="w-full text-center text-aliceblue font-mono text-lg hover:text-blue-600 transition py-2">Fencing &amp; Decking</a>
-  <a href="#contact" class="w-full text-center text-aliceblue font-mono text-lg hover:text-blue-600 transition py-2">Book a Job!</a>
+  <a href="{% if onHome %}#contact{% else %}{{ '/#contact' | url }}{% endif %}" class="w-full text-center text-aliceblue font-mono text-lg hover:text-blue-600 transition py-2">Book a Job!</a>
 </div>
 
 <script>
@@ -64,5 +66,3 @@
     }
   });
 </script>
-  </div>
-</nav>

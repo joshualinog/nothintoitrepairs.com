@@ -1,0 +1,48 @@
+<!-- Deck & Fence promo (mobile-only) -->
+<div class="md:mb-10  w-full relative z-20 " data-deck-promo>
+  <!-- close control -->
+  <button type="button" data-deck-promo-close class="absolute top-3 right-3 z-40 w-10 h-10 flex items-center justify-center rounded-md bg-dusty-taupe-500 hover:bg-dusty-taupe-600 focus:outline-none" aria-label="Close promotion"><span aria-hidden="true" class="text-bone-200 text-lg">&times;</span></button>
+  <div class="bg-white ">
+    <div class="relative bg-gray-900">
+      <!-- Decorative image and overlay -->
+      <div aria-hidden="true" class="absolute inset-0 overflow-hidden">
+        <img src="{{ '/assets/images/decksmallhero.jpeg' | url | safe }}" alt="Deck and fencing promotion" class="w-full h-full object-cover" />
+      </div>
+      <div aria-hidden="true" class="absolute inset-0 bg-gray-900 opacity-50"></div>
+
+      <div class="relative mx-auto flex max-w-3xl flex-col items-center px-6 py-32 text-center sm:py-64 lg:px-0">
+         <div class="block text-bone-200 mb-4 font-thin font-lexendTera group-hover:text-taupe">LIMITED TIME DEAL</div>
+        <h1 class="text-white font-thin text-4xl font-lexend lg:text-6xl"><a href="/fencing-and-decking-specialists/" class="inline-block">10% off all Fencing and Decking Jobs!</a></h1>
+        <a href="/fencing-and-decking-specialists/" class="mt-6 inline-block rounded-md border border-transparent bg-bone-200 px-6 py-2 text-base font-mono uppercase text-dusty-taupe-700 hover:bg-bone-100">Book Now!</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  if (!window.__deckPromoCloseScript) {
+    window.__deckPromoCloseScript = true;
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('[data-deck-promo]').forEach(function(promo) {
+        const btn = promo.querySelector('[data-deck-promo-close]');
+        if (!btn) return;
+        btn.addEventListener('click', function() {
+          // fade out then hide for smoother UX
+          promo.style.transition = 'opacity 320ms ease, transform 320ms ease';
+          // ensure starting state
+          promo.style.opacity = promo.style.opacity || '1';
+          promo.style.transform = 'translateY(0)';
+          // trigger animation
+          requestAnimationFrame(function() {
+            promo.style.opacity = '0';
+            promo.style.transform = 'translateY(-8px)';
+          });
+          setTimeout(function() {
+            promo.style.display = 'none';
+            promo.setAttribute('aria-hidden', 'true');
+          }, 340);
+        });
+      });
+    });
+  }
+</script>

@@ -4,16 +4,18 @@
   - md+: Two-panel layout (image right, content left)
 #}
 <section class="relative min-h-screen flex items-center justify-center bg-gray-900">
-  <!-- Background image for sm, hidden at md+ -->
-  <div class="absolute inset-0 bg-cover bg-center md:hidden" style="background-image: url('{{ '/assets/images/herobkg.webp' | url | safe }}');"></div>
-  <div class="absolute inset-0 bg-taupe bg-opacity-70 md:hidden"></div>
-  <div class="relative z-10 text-center text-white px-6 py-16 md:hidden">
-  <img src="/assets/images/NTIRLOGOWHITE.png" alt="NOTHIN' TO IT REPAIRS Logo" class="mb-2 mx-auto opacity-75 w-32">
-  <h1 class="xs:text-3xl sm:text-4xl mb-8 font-thin font-lexendTera uppercase tracking-tight">{{ hero_title | safe }}</h1>
-  <h2 class="text-2xl font-thin mb-6 leading-tight font-lexendTera uppercase tracking-tight">{{ hero_subtitle | safe }}</h2>
-    <div class="inline-flex flex-col gap-4 sm:flex-row sm:gap-2 justify-center">
-  <a href="#johns-island-sc"><button class="px-6 py-2 bg-taupe hover:bg-reseda font-mono text-white rounded shadow transition">{{ hero_button1 }}</button></a>
-  <a href="#hickory-nc"><button class="px-6 py-2 bg-khaki bg-opacity-75 hover:bg-opacity-100 border-2 rounded border-taupe text-taupe font-mono shadow transition">{{ hero_button2 }}</button></a>
+  <div class="md:hidden">
+    {% include "deck-fence-promo-button.njk" %}
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{ '/assets/images/herobkg.webp' | url | safe }}');"></div>
+    <div class="absolute inset-0 bg-taupe bg-opacity-70"></div>
+    <div class="relative z-10 text-center text-white px-6 py-16">
+      <img src="/assets/images/NTIRLOGOWHITE.png" alt="NOTHIN' TO IT REPAIRS Logo" class="mb-2 mx-auto opacity-75 w-32">
+      <h1 class="xs:text-3xl sm:text-4xl mb-8 font-thin font-lexendTera uppercase tracking-tight">{{ hero_title | safe }}</h1>
+      <h2 class="text-2xl font-thin mb-6 leading-tight font-lexendTera uppercase tracking-tight">{{ hero_subtitle | safe }}</h2>
+      <div class="inline-flex flex-col gap-4 sm:flex-row sm:gap-2 justify-center">
+        <a href="#johns-island-sc"><button class="px-6 py-2 bg-taupe hover:bg-reseda font-mono text-white rounded shadow transition">{{ hero_button1 }}</button></a>
+        <a href="#hickory-nc"><button class="px-6 py-2 bg-khaki bg-opacity-75 hover:bg-opacity-100 border-2 rounded border-taupe text-taupe font-mono shadow transition">{{ hero_button2 }}</button></a>
+      </div>
     </div>
   </div>
 
@@ -23,6 +25,7 @@
     <div class="w-1/2 flex flex-col justify-center items-start px-12 py-16 bg-khaki ">
       {# <img src="/assets/images/NTIRLOGO.png" alt="NOTHIN' TO IT REPAIRS Logo" class="mb-2 opacity-75 w-20 mx-auto"> #}
        {# <h1 class="text-2xl text-center font-thin mb-10 text-black font-lexendTera uppercase tracking-tight mx-auto">{{ hero_title | safe }}</h1>  #}
+       {% include "deck-fence-promo-button.njk" %}
       <p class="mb-8 text-lg font-lexendTera uppercase  text-white text-opacity-60">{{ hero_subtitle | safe }}</p>
       <div class="flex gap-4">
         <a href="#johns-island-sc" class="px-6 py-2 bg-taupe hover:bg-reseda text-white font-mono tracking-widest rounded shadow transition">{{ hero_button1 }}</a>

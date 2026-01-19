@@ -1,0 +1,188 @@
+<!-- booking form include (DRY) -->
+<div class="p-2 md:p-4 h-full bg-taupe col-span-2" data-booking-container id="{{ containerId | default('booking-form-container') }}">
+  <form id="{{ formId | default('contact-form') }}" action="https://formspree.io/f/meejjqkq" method="POST" data-booking-form>
+    <!-- form top part containing mail icon and heading -->
+    <div class="flex flex-col md:flex-row justify-around items-start md:items-center pt-8 p-4">
+      <!-- heading -->
+      <h2 class="text-2xl md:text-3xl font-lexend font-bold text-khaki tracking-tight">Book a Job & Questions</h2>
+
+      <!-- mail svg icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-forward" width="33" height="33" viewBox="0 0 24 24" stroke-width="1.5" stroke="#020100" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M12 18h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7.5" />
+        <path d="M3 6l9 6l9 -6" />
+        <path d="M15 18h6" />
+        <path d="M18 15l3 3l-3 3" />
+      </svg>
+    </div>
+
+    <!-- bottom form with input fields -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-6 px-4 md:py-12 md:px-8 text-sm">
+      <!-- name input -->
+      <div class="flex flex-col gap-1">
+        <label class="font-lexendTera font-semibold uppercase">
+          Name <span class="text-red-500">&#42;</span>
+        </label>
+        <input class="border-[1px] border-black bg-khaki p-2 rounded-md text-black text-lg font-mono placeholder:text-reseda placeholder:font-mono placeholder:text-lg" placeholder="Enter Your Name" required name="name" type="text" />
+      </div>
+
+      <!-- email input -->
+      <div class="flex flex-col gap-1">
+        <label class="font-lexendTera font-semibold uppercase">
+          Email <span class="text-red-500">&#42;</span>
+        </label>
+        <input class="border-[1px] border-black bg-khaki p-2 rounded-md text-black text-lg font-mono placeholder:text-reseda placeholder:font-mono placeholder:text-lg" placeholder="Enter Your Email" required name="email" type="email" />
+      </div>
+
+      <!-- phone number input -->
+      <div class="flex flex-col gap-1">
+        <label class="font-lexendTera font-semibold uppercase">
+          Phone <span class="text-red-500">&#42;</span>
+        </label>
+        <input class="border-[1px] border-black bg-khaki p-2 rounded-md text-black text-lg font-mono placeholder:text-reseda placeholder:font-mono placeholder:text-lg" placeholder="Enter Your Phone Number" required name="phone" type="tel" />
+      </div>
+
+      <!-- budget select -->
+      <div class="flex flex-col gap-1">
+        <label class="font-lexendTera font-semibold uppercase">
+          Budget <span class="text-red-500">&#42;</span>
+        </label>
+        <select class="border-[1px] border-black bg-khaki p-2 rounded-md text-black text-lg font-mono" name="budget" required>
+          <option value="">Select Budget Range</option>
+          <option value="500-1500">$500 to $1,500</option>
+          <option value="1500-5000">$1,500 to $5,000</option>
+          <option value="5000-10000">$5,000 to $10,000</option>
+          <option value="10000+">$10,000+</option>
+        </select>
+      </div>
+
+      <!-- services checkboxes -->
+      <div class="flex flex-col gap-1 md:col-span-2">
+        <label class="font-lexendTera font-semibold uppercase">
+          Services <span class="text-red-500">&#42;</span>
+        </label>
+        <div class="flex flex-col gap-2">
+          <label class="flex items-center gap-2">
+            <input type="checkbox" name="services[]" value="fencing" class="accent-khaki">
+            <span class="text-khaki font-mono text-lg">FENCING</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="checkbox" name="services[]" value="decking" class="accent-khaki">
+            <span class="text-khaki font-mono text-lg">DECKING</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="checkbox" name="services[]" value="porch remodel" class="accent-khaki">
+            <span class="text-khaki font-mono text-lg">PORCH REMODEL</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="checkbox" name="services[]" value="bathroom repair and remodel" class="accent-khaki">
+            <span class="text-khaki font-mono text-lg">BATHROOM REPAIR AND REMODEL</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="checkbox" name="services[]" value="custom home remodel" class="accent-khaki">
+            <span class="text-khaki font-mono text-lg">CUSTOM HOME REMODEL</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- message input -->
+      <div class="flex flex-col gap-1 md:col-span-2">
+        <label class="font-lexendTera font-semibold uppercase">
+          Message <span class="text-red-500">&#42;</span>
+        </label>
+        <textarea class="border-[1px] border-black bg-khaki p-2 rounded-md text-black text-lg font-mono placeholder:text-reseda placeholder:font-mono placeholder:text-lg" placeholder="Enter Your Message" required name="message"></textarea>
+      </div>
+
+      <!-- hidden source field (set by JS) -->
+      <input type="hidden" name="source" id="{{ sourceId | default('form-source') }}" value="" />
+
+    </div>
+  </form>
+
+  <!-- submit button div -->
+  <div class="flex items-center justify-center md:justify-end py-4 px-8">
+    <!-- submit button -->
+    <button type="submit" form="{{ formId | default('contact-form') }}" class="py-2 px-4 md:py-4 md:px-6 bg-black rounded-md border-2 border-black flex items-center gap-2 hover:scale-95 transition-all text-khaki">
+      <span class="text-xl">Submit</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  if (!window.__bookingFormScriptLoaded) {
+    window.__bookingFormScriptLoaded = true;
+    document.addEventListener('DOMContentLoaded', function() {
+      const bookingForms = document.querySelectorAll('[data-booking-form]');
+      const thankYouDiv = document.getElementById('thank-you');
+
+      if (!bookingForms.length) return;
+
+      bookingForms.forEach(form => {
+        // Set a hidden "source" value if the field exists
+        const sourceInput = form.querySelector('input[name="source"]');
+        if (sourceInput) {
+          sourceInput.value = window.location.pathname || document.title || '';
+        }
+
+        // Style select locally and keep behavior per form
+        const select = form.querySelector('select[name="budget"]');
+        if (select) {
+          select.style.color = select.value === '' ? '#776e45' : '#020100';
+          select.addEventListener('change', function() {
+            this.style.color = this.value === '' ? '#776e45' : '#020100';
+          });
+        }
+
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          const container = form.closest('[data-booking-container]') || document.getElementById('form-container') || form;
+
+          // Temporary: Skip submission for testing environments
+          if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.includes('.app.github.dev')) {
+            if (container) container.style.display = 'none';
+            if (thankYouDiv) thankYouDiv.classList.remove('hidden');
+            return;
+          }
+
+          const formData = new FormData(form);
+          fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          }).then(response => {
+            if (response.ok) {
+              if (container) container.style.display = 'none';
+              if (thankYouDiv) thankYouDiv.classList.remove('hidden');
+            } else {
+              alert('There was an error submitting the form. Please try again.');
+            }
+          }).catch(error => {
+            console.error('Fetch error:', error);
+            alert('There was an error submitting the form. Please try again.');
+          });
+        });
+      });
+
+      // Button to submit another (resets and shows forms)
+      const submitAnotherBtn = document.getElementById('submit-another');
+      if (submitAnotherBtn) {
+        submitAnotherBtn.addEventListener('click', function() {
+          if (thankYouDiv) thankYouDiv.classList.add('hidden');
+
+          bookingForms.forEach(form => {
+            const container = form.closest('[data-booking-container]') || document.getElementById('form-container') || form;
+            if (container) container.style.display = 'block';
+            form.reset();
+            const select = form.querySelector('select[name="budget"]');
+            if (select) select.style.color = select.value === '' ? '#776e45' : '#020100';
+          });
+        });
+      }
+    });
+  }
+</script>

@@ -1,0 +1,23 @@
+---
+title: Fencing & Decking Specialists
+layout: layout.njk
+---
+
+<section id="contact" class="mt-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <h1 class="text-3xl font-bold mb-6">Fencing & Decking Specialists</h1>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {% set formId = 'fencing-form' %}
+      {% set containerId = 'fencing-form-container' %}
+      {% set sourceId = 'fencing-form-source' %}
+      {% include "booking-form.njk" %}
+      <div class="py-6 px-4 bg-reseda hidden md:block">
+        <h2 class="text-xl font-bold text-khaki">Contact Information</h2>
+        <p class="text-khaki mt-4">Email: nothintoitrepairs@gmail.com</p>
+        <p class="text-khaki mt-2">Phone: 828.446.7145</p>
+      </div>
+    </div>
+  </div>
+
+  {% include "thank-you.njk" %}
+</section>

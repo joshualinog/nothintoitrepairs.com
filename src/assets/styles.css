@@ -1,14 +1,120 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* https://coolors.co/4a4235-776e45-020100-b3ac9c-d6cfbe-9f8b71-776654-f2f8fc */
 :root {
+	/* primary single vars (legacy) */
 	--taupe: #4a4235;
 	--reseda: #776e45;
 	--black: #020100;
 	--khaki: #b3ac9c;
 	--coyote: #776654;
 	--aliceblue: #f2f8fc;
+
+	/* full color scales */
+	/* taupe */
+	--taupe-50: #f4f3f0;
+	--taupe-100: #eae7e1;
+	--taupe-200: #d5cec3;
+	--taupe-300: #c0b6a5;
+	--taupe-400: #aa9d88;
+	--taupe-500: #95856a;
+	--taupe-600: #776a55;
+	--taupe-700: #5a503f;
+	--taupe-800: #3c352a;
+	--taupe-900: #1e1b15;
+	--taupe-950: #15130f;
+
+	/* dusty-olive */
+	--dusty-olive-50: #f6f4ef;
+	--dusty-olive-100: #eceadf;
+	--dusty-olive-200: #dad5be;
+	--dusty-olive-300: #c7c09e;
+	--dusty-olive-400: #b5aa7d;
+	--dusty-olive-500: #a2955d;
+	--dusty-olive-600: #82774a;
+	--dusty-olive-700: #615a38;
+	--dusty-olive-800: #413c25;
+	--dusty-olive-900: #201e13;
+	--dusty-olive-950: #17150d;
+
+	/* black (palette) */
+	--black-50: #fff2e5;
+	--black-100: #ffe6cc;
+	--black-200: #ffcc99;
+	--black-300: #ffb366;
+	--black-400: #ff9933;
+	--black-500: #ff8000;
+	--black-600: #cc6600;
+	--black-700: #994c00;
+	--black-800: #663300;
+	--black-900: #331a00;
+	--black-950: #241200;
+
+	/* khaki-beige */
+	--khaki-beige-50: #f4f3f1;
+	--khaki-beige-100: #e9e7e2;
+	--khaki-beige-200: #d3cfc5;
+	--khaki-beige-300: #bcb6a9;
+	--khaki-beige-400: #a69e8c;
+	--khaki-beige-500: #90866f;
+	--khaki-beige-600: #736b59;
+	--khaki-beige-700: #565043;
+	--khaki-beige-800: #3a362c;
+	--khaki-beige-900: #1d1b16;
+	--khaki-beige-950: #141310;
+
+	/* bone */
+	--bone-50: #f5f3ef;
+	--bone-100: #ebe8e0;
+	--bone-200: #d8d1c0;
+	--bone-300: #c4baa1;
+	--bone-400: #b0a282;
+	--bone-500: #9d8b62;
+	--bone-600: #7d6f4f;
+	--bone-700: #5e543b;
+	--bone-800: #3f3827;
+	--bone-900: #1f1c14;
+	--bone-950: #16130e;
+
+	/* dusty-taupe */
+	--dusty-taupe-50: #f5f3f0;
+	--dusty-taupe-100: #eae6e1;
+	--dusty-taupe-200: #d6cdc2;
+	--dusty-taupe-300: #c1b4a4;
+	--dusty-taupe-400: #ac9c86;
+	--dusty-taupe-500: #988367;
+	--dusty-taupe-600: #796953;
+	--dusty-taupe-700: #5b4e3e;
+	--dusty-taupe-800: #3d3429;
+	--dusty-taupe-900: #1e1a15;
+	--dusty-taupe-950: #15120e;
+
+	/* olive-wood */
+	--olive-wood-50: #f4f2f0;
+	--olive-wood-100: #eae6e1;
+	--olive-wood-200: #d5ccc3;
+	--olive-wood-300: #c0b3a5;
+	--olive-wood-400: #aa9a88;
+	--olive-wood-500: #95806a;
+	--olive-wood-600: #776755;
+	--olive-wood-700: #5a4d3f;
+	--olive-wood-800: #3c332a;
+	--olive-wood-900: #1e1a15;
+	--olive-wood-950: #15120f;
+
+	/* alice-blue */
+	--alice-blue-50: #eaf4fa;
+	--alice-blue-100: #d5e9f6;
+	--alice-blue-200: #acd2ec;
+	--alice-blue-300: #82bce3;
+	--alice-blue-400: #59a6d9;
+	--alice-blue-500: #2f90d0;
+	--alice-blue-600: #2673a6;
+	--alice-blue-700: #1c567d;
+	--alice-blue-800: #133953;
+	--alice-blue-900: #091d2a;
+	--alice-blue-950: #07141d;
 }
 
 p,
